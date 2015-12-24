@@ -26,7 +26,7 @@ session_start();
 				$query->bindValue(':e-mail',$_POST['email'],PDO::PARAM_STR);
 				$query->execute();
 				$data=$query->fetch();
-
+				
 				if($data['password'] == $_POST['pass']){
 					$_SESSION['name'] = $data['username'];
 					$_SESSION['level'] = $data['rank'];
