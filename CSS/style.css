@@ -1,0 +1,182 @@
+/*
+__STYLE.CSS__
+
+_Table des matières
+______
+__I/Généralités_
+___1/Layout de la page
+___2/Layout des éléments interactifs
+______
+__II/Eléments du header_
+___1/Généralités
+___2/Menu
+____1.Utilisateur déconnecté
+_____i.Boutons
+_____ii.Interface de connexion
+____2.Utilisateur connecté
+______
+__III/Footer_
+______
+
+
+
+Notes de mise en page : 
+
+Titres sous forme de commentaires HTML.
+Niveaux de titre : 
+	Les niveaux de titre sont égaux au nombre de "--" placés avant le titre.
+*/
+
+/*
+= Généralités =
+- Layout de la page -
+*/
+header{
+    background-image: url("../images/background_banner.png");
+    background-position: bottom;
+	position: fixed;
+    width: 100%;
+	height : 300px;
+	box-shadow: -15px 5px 30px 2px black;
+
+}
+
+footer{
+    background-image: url("../images/footer.jpg");
+    bottom: 0;
+	position: absolute;
+	bottom: 100%;
+    width: 100%;
+    box-shadow: -15px 5px 30px 2px black;
+}
+
+body{
+    width: 100%;
+    overflow: auto;
+    background-color: #411A23;
+}
+
+.corps{
+
+    width: 100%;
+}
+.vide{
+    width: 100%;
+}
+
+/*
+- Layout des éléments interactifs -
+*/
+input, button, text-area, select{
+	border-radius: 3px;
+	background-color: #411A23;
+	border-color: #BF2742;
+	color: #F2F2F2;
+	}
+
+button{
+	border: 0px;
+}
+	
+button:hover{
+	opacity: 0.7;
+}
+
+
+/*- Eléments du header -->
+<!-- -- Généralités -->*/
+.title{
+	position : top;
+	display : inline-block;
+	font-family: forte, arial;
+	color:white;
+    font-size: 12;
+    text-shadow: 10px 5px 2px #BF2742;
+}
+
+.logo{
+	display : inline-block;
+    width: 40%;
+}
+.search_bar{
+	display : inline-block;
+}
+
+.searchbar{
+	height : 50px;
+	border-radius : 7px;
+	background-color: #F2F2F2;
+	border-color: #F2F2F2;
+	color: black;
+	font-size: 2em;
+}
+
+.search{
+	background: url(../images/icons_2/search.png);
+    width: 64px; 
+    height: 64px; 
+	border: 0;
+}
+
+/*-- -- Menu --
+*/
+.menu{
+	float: right;
+	display : inline-block;
+}
+
+/*<!-- -- -- Utilisateur déconnecté -->
+<!-- -- -- -- Boutons -->
+*/
+.login{
+	background : url(../images/icons_2/Login_in.png);
+	width: 48px;
+	height: 48px;
+	border: 0;
+}
+
+.signin{
+	background: url(../images/icons_2/Add_user.png);
+	width: 48px;
+	height: 48px;
+	border: 0;
+}
+
+/*- -- -- -- Interface de connexion -->
+*/
+#loginbox{
+	background-color: #741F30;
+	border-radius: 7px;
+	visibility: hidden;
+	float: right;
+}
+
+/*
+<!-- -- -- Utilisateur connecté -->
+*/
+.profil{
+	background: url(../images/icons_2/User.png);
+	width: 48px;
+	height: 48px;
+	border: 0;	
+}
+
+.logout{
+	background : url(../images/icons_2/Login_out.png);
+	width: 48px;
+	height: 48px;
+	border: 0;
+}	
+
+/*
+<!-- ? -->
+*/
+.recherche{
+    margin-bottom: 50%;
+}
+
+/*<!-- Footer -->
+*/
+.formation{
+    text-align: right;
+}
