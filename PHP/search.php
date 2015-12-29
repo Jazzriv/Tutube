@@ -1,16 +1,6 @@
-<?php 
-session_start();
-
+<?php
+include("debut.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<title>Tutube</title>
-	</head>
 	<body>
 		<?php 
 			include('database.php');
@@ -21,43 +11,30 @@ session_start();
 			$pseudo=(isset($_SESSION['password']))?$_SESSION['password']:'';
 			
 			//Construction de la page
-			if($lvl>1){
+			/*if($lvl>1){
 				include('header.php');
 			}
 			else{
 				include('unsigned_header.php');
-			}
-			//IDEE  : ajout d'une barre de recherche avancée !! NAV (emploi du div de gauche)
+			}*/
+			//IDEE  : ajout d'une barre de recherche avancée
 			//ICI
 			
-			//Résultats de la recherche
-			$search= split("\s", $_GET);
-			$x=0;
-			$construct = "";
-			foreach($search as $word){
-				$x++;
-				if($x==1){
-					$construct .="keywords LIKE '%$word%'";
-				}	
-				else{
-					$construct .="AND keywords LIKE '%$word%'";
-					echo $word;
+			//Préparation de la recherche et de son affichage
+			include("search_preparation.php");
+			include("search_layout.php");
+			//Affichage des résultats
+			if($to_show){
+				echo("Nous avons trouvé " . $total_results . " cassettes correspondantes.");
+				while($i=0<$to_show){
+					$data=$to_show[$i];
+					include("search_result.php");
+					$i++;
 				}
 			}
-			$query = mysql_query("SELECT * FROM movies WHERE $construct ORDER BY movies") or die (mysql_error());
-			$verif = mysql_num_rows($query);
-			if($verif <= 0){
-				echo("Aucun résultat ne correspond à votre recherche...<br/>C'est soit ça, soit nous avons perdu les cassettes et nous nous en excusons.");
-			}
-			else{
-				while($results=mysql_fetch_array($query)){
-					include('result.php');				
-				}
-			}
-			
-			
-		//footer
-		include('footer.php');
+			echo($layout);
+			//footer
+			include('footer.php');
 		?>
 	</body>
 </html>
