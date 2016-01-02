@@ -1,19 +1,8 @@
 <?php
-
-//Connexion à la BDD movies
-/*try
-{
-    $videos = new PDO('mysql:host=localhost;dbname=../databases/movies-v2;charset=utf8', 'root', '');
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}*/
-
-//Connexion à la BDD users
+//Connexion à la BDD tutube
 try
 {
-    $users = new PDO('mysql:host=localhost;dbname=users;charset=utf8', 'root', '');
+    $tutube = new PDO('mysql:host=localhost;dbname=tutube;charset=utf8', 'root', '');
 }
 catch (Exception $e)
 {
