@@ -1,16 +1,6 @@
-<?php 
-session_start();
-
+<?php
+include("debut.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<title>Tutube</title>
-	</head>
 	<body>
 		<?php 
 			include('database.php');
@@ -22,7 +12,7 @@ session_start();
 
 			//Vérification des identifiants de connexion.
 			if(isset($_POST['email']) && isset($_POST['pass'])){ 
-				$query=$users->prepare('SELECT user_id, password, username, rank FROM users WHERE email= :email');
+				$query=$tutube->prepare('SELECT user_id, password, username, rank FROM users WHERE email= :email');
 				$query->bindValue(':email',$_POST['email'],PDO::PARAM_STR);
 				$query->execute();
 				$data=$query->fetch();
