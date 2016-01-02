@@ -1,15 +1,16 @@
 <div class="viddiv">
 	<div class="vidthumbnail">
-		<a href="view.php"><img src="$data['thumbnail']"></a>
+		<a href=<?php echo($video_url);?>><img src="<?php echo($data['thumbnail']);?>"></a>
 	</div>
 	<div class="vidinfo">
-		<h5><a href="view.php">$data['title']</a></h5>
+		<h5><a href=<?php echo($video_url);?>><?php echo($data['title']);?></a></h5>
 		<br/>
 		<h6>Synopsis : </h6>
-		Decription
+		Description
 	</div>
 	<div class="vidinfo">
 		<h6>Auteur : </h6>
-		$data['creator']
+		<?php echo($data['creator']);?>
 	</div>
+
 </div>
