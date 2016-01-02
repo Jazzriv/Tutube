@@ -22,17 +22,8 @@ include("debut.php");
 			
 			//Préparation de la recherche et de son affichage
 			include("search_preparation.php");
-			include("search_layout.php");
-			//Affichage des résultats
-			if($to_show){
-				echo("Nous avons trouvé " . $total_results . " cassettes correspondantes.");
-				while($i=0<$to_show){
-					$data=$to_show[$i];
-					include("search_result.php");
-					$i++;
-				}
-			}
-			echo($layout);
+			
+
 			//footer
 			include('footer.php');
 		?>
